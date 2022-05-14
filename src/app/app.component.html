@@ -1,1 +1,8 @@
-<app-header></app-header> <router-outlet></router-outlet>
+<app-header [data]="title"></app-header>
+<app-products [product]="productList"></app-products>
+<app-product-add (onSubmit)="handleAddProduct($event)"></app-product-add>
+<button (click)="handleToggle()" class="btn btn-success">Toggle</button>
+
+<p>{{ title }}</p>
+
+<router-outlet></router-outlet>
