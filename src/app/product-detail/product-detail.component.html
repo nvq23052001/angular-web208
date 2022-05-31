@@ -1,1 +1,20 @@
-<p *ngIf="detail">{{ detail.name }}</p>
+<table class="table table-bordererd" *ngIf="detail">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Avatar</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td>{{ detail.email }}</td>
+      <td><img src="{{ detail.avatar }}" alt="" /></td>
+      <td>
+        <button class="btn btn-danger">info</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

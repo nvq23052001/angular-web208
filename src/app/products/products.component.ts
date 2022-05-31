@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../models';
+import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -7,12 +8,24 @@ import { Product } from '../../models';
 })
 export class ProductsComponent implements OnInit {
   @Input('product') productList!: Product[];
-  productDetail!: Product;
+  data!: any;
 
-  handleInfo(id: number) {
-    console.log(id);
-    this.productDetail = this.productList.find((product) => product.id === id)!;
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.onGetList();
   }
 
-  ngOnInit(): void {}
+  onGetList() {
+    this.productService.getProducts().subscribe((product: any) => {
+      console.log(product);
+      this.data = product;
+    });
+  }
+
+  handleDeleteProduct(id: any) {
+    this.productService.deleteProduct(id).subscribe(() => {
+      this.data = this.data.filter((item: any) => item.id !== id);
+    });
+  }
 }

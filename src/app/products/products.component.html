@@ -1,24 +1,30 @@
-<app-product-detail [detail]="productDetail"></app-product-detail>
-
 <table class="table table-bordererd">
   <thead>
     <tr>
       <th>#</th>
       <th>Name</th>
-      <th>Price</th>
-      <th>Status</th>
+      <th>Email</th>
+      <th>Avatar</th>
       <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of productList; let i = index">
+    <tr *ngFor="let product of data; let i = index">
       <td>{{ i + 1 }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.status ? "Con hang" : "Het hang" }}</td>
+      <td>{{ product.first_name }}</td>
+      <td>{{ product.email }}</td>
+      <td><img src="{{ product.avatar }}" alt="" /></td>
       <td>
-        <button (click)="handleInfo(product.id)" class="btn btn-danger">
+        <button class="btn btn-success" routerLink="/product/{{ product.id }}">
           info
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-danger"
+          (click)="handleDeleteProduct(product.id)"
+        >
+          Delete
         </button>
       </td>
     </tr>
