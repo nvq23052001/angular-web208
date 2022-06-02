@@ -1,0 +1,156 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+body,
+html {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  line-height: 1.2;
+  background: #18181b;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 300;
+  box-sizing: border-box;
+  color: #fff;
+}
+body .wrapper,
+html .wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  padding: 1.5em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* * + * {
+  margin: 0.75em 0 0;
+}
+
+.table-responsive {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  margin: 0;
+  width: 100%;
+  color: #464646;
+}
+.table-responsive * {
+  font-size: 13px;
+}
+.table-responsive i.blank {
+  display: none;
+}
+.table-responsive th {
+  border-bottom: 1px solid shade(#6c6c6c, 25%);
+  text-align: left;
+  padding: 0.75em 1.0714285714em;
+  text-align: center;
+}
+.table-responsive th:not([data-title]) {
+  font-weight: bold;
+}
+@media (min-width: 992px) {
+  .table-responsive th:not([data-title]) {
+    border-right: 1px solid #037f9e;
+  }
+}
+.table-responsive th.table-column {
+  width: 200px;
+}
+.table-responsive th.row {
+  background: #09bad6;
+  color: #fff;
+}
+.table-responsive th[data-title]:before,
+.table-responsive td[data-title]:before {
+  content: attr(data-title) ": ";
+  font-weight: bold;
+  text-align: left;
+}
+@media (min-width: 992px) {
+  .table-responsive th[data-title]:before,
+  .table-responsive td[data-title]:before {
+    content: none;
+  }
+}
+.table-responsive tr {
+  margin: 0 0 0rem 0;
+}
+.table-responsive tr:nth-child(odd) {
+  background: white;
+}
+.table-responsive tr:nth-child(odd).header-row {
+  background: #037f9e !important;
+  color: #fff;
+}
+.table-responsive tr:nth-child(even) {
+  background: whitesmoke;
+}
+.table-responsive tr td {
+  /* Behave  like a "row" */
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+  position: relative;
+  padding-left: 50%;
+  padding-right: 0.75em;
+  text-align: right;
+  padding: 15px;
+}
+@media (min-width: 992px) {
+  .table-responsive tr td {
+    vertical-align: top;
+    border-bottom: 0;
+    padding: 1.5em;
+    border-right: 1px solid #fff;
+    text-align: center;
+  }
+}
+.table-responsive tr td ul {
+  margin-left: 0;
+  margin-bottom: 5px;
+  padding: 0 0 0 1.5em;
+}
+.table-responsive tr td ul li {
+  padding: 3px 0;
+}
+@media (max-width: 992px) {
+  .table-responsive {
+    /* Force table to not be like tables anymore */
+    /* Hide table headers (but not display: none;, for accessibility) */
+  }
+  .table-responsive table,
+  .table-responsive thead,
+  .table-responsive tbody,
+  .table-responsive th,
+  .table-responsive td,
+  .table-responsive tr {
+    display: block;
+    vertical-align: middle;
+  }
+  .table-responsive thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .table-responsive tr td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    padding-left: 0.75em;
+  }
+  .table-responsive tr td.empty {
+    display: none;
+  }
+}

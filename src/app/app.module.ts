@@ -20,6 +20,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { LayoutAdminComponent } from './Layout/layout-admin/layout-admin.component';
+import { LayoutUserComponent } from './Layout/layout-user/layout-user.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 registerLocaleData(en);
 
@@ -31,8 +35,21 @@ registerLocaleData(en);
     ProductsComponent,
     ProductDetailComponent,
     ProductAddComponent,
+    LayoutAdminComponent,
+    LayoutUserComponent,
+    SignInComponent,
+    SignUpComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, BrowserAnimationsModule, IconsProviderModule, NzLayoutModule, NzMenuModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule,
+  ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })

@@ -1,5 +1,5 @@
 {
-  "user": [
+  "products": [
     {
       "id": 7,
       "email": "michael.lawson@reqres.in",
@@ -20,27 +20,18 @@
       "first_name": "Tobias",
       "last_name": "Funke",
       "avatar": "https://reqres.in/img/faces/9-image.jpg"
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$aazj8B6vbuclP9i2iU.1AeopvS9kpxMfX0wCG8c5cbiNXXvCT0SfO",
+      "id": 1
     },
     {
-      "id": 10,
-      "email": "byron.fields@reqres.in",
-      "first_name": "Byron",
-      "last_name": "Fields",
-      "avatar": "https://reqres.in/img/faces/10-image.jpg"
-    },
-    {
-      "id": 11,
-      "email": "george.edwards@reqres.in",
-      "first_name": "George",
-      "last_name": "Edwards",
-      "avatar": "https://reqres.in/img/faces/11-image.jpg"
-    },
-    {
-      "id": 12,
-      "email": "rachel.howell@reqres.in",
-      "first_name": "Rachel",
-      "last_name": "Howell",
-      "avatar": "https://reqres.in/img/faces/12-image.jpg"
+      "email": "nvquyet23052001@gmail.com",
+      "password": "$2a$10$O2JV9HQi2Y.2x49sY68oJernwY61wTdhxd6CodisfClPLg2xnuEva",
+      "id": 2
     }
   ]
 }
